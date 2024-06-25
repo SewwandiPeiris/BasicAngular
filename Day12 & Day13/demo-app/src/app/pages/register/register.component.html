@@ -1,0 +1,57 @@
+<p>Hi, I am register component.</p>
+<hr>
+<h2>Student Information</h2>
+<table>
+   <!-- <tr>
+        <td>Student Name:</td>
+        <td><input type="text" [(ngModel)]="stName"></td>
+    </tr>
+    <tr>
+        <td>Student Age:</td>
+        <td><input type="number" [(ngModel)]="stAge"></td>
+    </tr>-->
+    <tr>
+        <td>Student Name:</td>
+        <td><input type="text" [(ngModel)]="student.name"></td>
+    </tr>
+    <tr>
+        <td>Student Age:</td>
+        <td><input type="number" [(ngModel)]="student.age"></td>
+    </tr>
+    <tr>
+        <td><button (click)="btnRegisterClick()">Register</button></td>
+    </tr>
+</table>
+<hr>
+<!--<h2>Provided Information</h2>
+<table>
+    <tr>
+        <td>Student Name:</td>
+        <td>{{stName}}</td>
+    </tr>
+    <tr>
+        <td>Student Age:</td>
+        <td>{{stAge}}</td>
+    </tr>
+</table>-->
+
+
+<div *ngIf="studentList.length > 0">
+    <hr>
+    <h2>Registered student</h2>
+    <hr>
+</div>
+
+<table  border="1" *ngIf="studentList.length > 0">
+    <tr>
+        <td>Name</td>
+        <td>Age</td>
+    </tr>
+    <tr *ngFor="let student of studentList">
+        <td>{{student.name}}</td>
+        <td>{{student.age}}</td>
+    </tr>
+    <tr>
+        <td><button (click)="btnClearClick()">Clear</button></td>
+    </tr>
+</table>
